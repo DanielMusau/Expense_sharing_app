@@ -12,6 +12,11 @@ RUN mix local.hex --force && \
     mix local.rebar --force && \
     mix deps.get
 
+# Generate and set the secret key
+RUN mix deps.compile && \
+    export SECRET_KEY_BASE=$(mix phx.gen.secret) && \
+    echo "SECRET_KEY_BASE=$SECRET_KEY_BASE" >> .env
+
 # Compile the application
 RUN mix compile
 
