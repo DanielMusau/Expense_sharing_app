@@ -1,4 +1,4 @@
-# ExpenseSharingApp
+# Expense Sharing App
 
 To start your Phoenix server:
 
