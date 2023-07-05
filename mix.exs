@@ -5,7 +5,7 @@ defmodule ExpenseSharingApp.MixProject do
     [
       app: :expense_sharing_app,
       version: "0.1.0",
-      elixir: "~> 1.13.4",
+      elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -46,7 +46,7 @@ defmodule ExpenseSharingApp.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:bcrypt_elixir, "~> 2.3"},
+      {:bcrypt_elixir, "~> 3.0"},
       {:recase, "~> 0.5"},
     ]
   end
