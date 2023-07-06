@@ -46,6 +46,7 @@ defmodule ExpenseSharingApp.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
+      {:bcrypt_elixir, "~> 2.0"},
       {:recase, "~> 0.5"},
     ]
   end
