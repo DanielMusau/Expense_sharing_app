@@ -24,6 +24,9 @@ RUN mix deps.get
 # Compile the application
 RUN mix compile
 
+# Build the static assets and generate cache manifest
+RUN mix phx.digest
+
 # Run database migrations (if applicable)
 # RUN mix ecto.migrate
 
