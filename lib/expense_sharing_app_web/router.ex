@@ -13,6 +13,9 @@ defmodule ExpenseSharingAppWeb.Router do
     resources "/groups", GroupController
     resources "/group_users", GroupUserController
     resources "/expenses", ExpenseController
+
+    post "/login", SessionController, :login
+    delete "/logout", SessionController, :logout
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

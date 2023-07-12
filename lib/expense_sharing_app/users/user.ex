@@ -3,6 +3,7 @@ defmodule ExpenseSharingApp.Users.User do
   import Ecto.Changeset
   alias ExpenseSharingApp.GroupUsers.GroupUser
   alias ExpenseSharingApp.Expenses.Expense
+  alias Argon2
 
   schema "users" do
     field :email, :string
@@ -23,24 +24,16 @@ defmodule ExpenseSharingApp.Users.User do
     |> validate_required([:name, :email, :password])
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email, name: :uidx_users_email, message: "Email already taken")
-    #|> hash_password()
+    |> hash_password()
     |> case_name()
     |> case_email()
   end
 
-  #defp hash_password(changeset) do
-  #  case changeset do
-  #    %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
-  #      put_change(
-  #        changeset,
-  #        :password_hash,
-  #        Bcrypt.Base.hash_password(pass, Bcrypt.gen_salt(12, true))
-  #      )
-#
-  #    _ ->
-  #      changeset
-  #  end
-  #end
+  defp hash_password(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
+    change(changeset, password_hash: Argon2.hash_pwd_salt(password))
+  end
+
+  defp hash_password(changeset), do: changeset
 
   defp case_name(changeset) do
     case changeset do
