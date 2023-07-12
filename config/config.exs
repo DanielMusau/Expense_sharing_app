@@ -17,6 +17,7 @@ config :expense_sharing_app, ExpenseSharingApp.Users.Guardian,
 
 # Configures the endpoint
 config :expense_sharing_app, ExpenseSharingAppWeb.Endpoint,
+  server: true,
   url: [host: "localhost"],
   render_errors: [
     formats: [json: ExpenseSharingAppWeb.ErrorJSON],
