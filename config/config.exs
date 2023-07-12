@@ -13,7 +13,7 @@ config :expense_sharing_app,
 # Configure guardian
 config :expense_sharing_app, ExpenseSharingApp.Users.Guardian,
   issuer: "auth_me",
-  secret_key: "4fi5c91tCj0qxXthHA2GQJ9geV6QA8Asmzd6n4645Ex9oPBuM7+eRoh9g7F0VPml"
+  secret_key: ""
 
 # Configures the endpoint
 config :expense_sharing_app, ExpenseSharingAppWeb.Endpoint,
