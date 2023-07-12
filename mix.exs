@@ -48,7 +48,7 @@ defmodule ExpenseSharingApp.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:recase, "~> 0.5"},
       {:guardian, "~> 2.0"},
-      {:argon2_elixir, "~> 3.0"}
+      {:argon2_elixir, "~> 3.1"}
     ]
   end
 
