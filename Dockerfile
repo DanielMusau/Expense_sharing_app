@@ -1,12 +1,12 @@
-# Use the official Elixir image
+# Use the official Elixir image with Alpine Linux
 FROM hexpm/elixir:1.13.4-erlang-24.1.2-alpine-3.14.2
 
 # Set the environment variables
 ENV MIX_ENV=prod
 
 # Install build tools (including make)
-RUN apt-get update && \
-    apt-get install -y build-essential
+RUN apk update && \
+    apk add --no-cache build-base
 
 # Set the working directory
 WORKDIR /app
