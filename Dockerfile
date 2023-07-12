@@ -1,5 +1,5 @@
 # Use the official Elixir image
-FROM hexpm/elixir:1.11.2-erlang-23.2.1-alpine-3.12.1
+FROM hexpm/elixir:1.13.4-erlang-24.1.2-alpine-3.14.2
 
 # Set the environment variables
 ENV MIX_ENV=prod
